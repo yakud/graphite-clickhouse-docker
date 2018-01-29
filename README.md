@@ -22,7 +22,9 @@ docker run -d \
 ```sh
 docker run -d \
     --name=some-carbon-clickhouse \
-    --volume=./local/graphite-clickhouse:/etc/graphite-clickhouse
+    --volume=./local/graphite-clickhouse.conf:/etc/graphite-clickhouse/graphite-clickhouse.conf
+    --volume=./local/rollup.xml:/etc/graphite-clickhouse/rollup.xml
+    --volume=./local/users.xml:/etc/graphite-clickhouse/users.xml
     -p 9090:9090 \
     yakud/graphite-clickhouse-docker
 ```
